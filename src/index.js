@@ -1,9 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Container from './components/Container'
-import './index.less'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import Container from "./components/Container";
+import { store } from './state/store/store';
+import "./index.less";
+
 
 ReactDOM.render(
-  <Container />,
-  document.querySelector('#root'),
-)
+  <Provider store={store}>
+    <Container />
+  </Provider>,
+  document.querySelector("#root")
+);
